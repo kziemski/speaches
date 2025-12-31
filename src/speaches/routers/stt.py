@@ -150,6 +150,7 @@ def transcribe_file(
     transcription_executor = find_executor_for_model_or_raise(
         model, transcription_model_card_data, executor_registry.transcription
     )
+    print(model)
 
     vad_request = VadRequest(audio=audio, vad_options=DEFAULT_VAD_OPTIONS)
     speech_segments = executor_registry.vad.model_manager.handle_vad_request(vad_request)
